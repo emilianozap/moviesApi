@@ -1,16 +1,11 @@
-import {
-  AppBar,
-  Avatar,
-  IconButton,
-  Toolbar,
-  makeStyles,
-} from "@material-ui/core";
+
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/image/logo.png";
+import avatar1 from "../../assets/image/avatar1.jpg";
 import { useNavigate } from "react-router-dom";
+import { Logo, RootHeader, Avatar } from "./HeaderStyled";
 
 const Header = () => {
-  const classes = useStyles();
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const hideHeader = () => {
@@ -27,49 +22,18 @@ const Header = () => {
   }, []);
 
   return (
-    <AppBar
-      elevation={0}
-      className={`${classes.root} ${show && classes.transparent}`}
-    >
-      <Toolbar className={classes.toolbar}>
-        <IconButton onClick={() => navigate("/")}>
-          <img src={logo} alt="logo" className={classes.logo} />
-        </IconButton>
+    <RootHeader>
+        <Logo src={logo} onClick={() => navigate("/")}>
+                  </Logo>
 
-        <Avatar
-          variant="square"
-          className={classes.avatar}
+        <Avatar src={avatar1}
+          
           onClick={() => navigate("/profile")}
         />
-      </Toolbar>
-    </AppBar>
+    </RootHeader>
   );
 };
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "sticky",
-    backgroundColor: "#111",
-    top: 0,
-    left: 0,
-    right: 0,
-  },
-  transparent: {
-    backgroundColor: "transparent",
-  },
-  toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
 
-  logo: {
-    cursor: "pointer",
-    width: "100px",
-  },
-  avatar: {
-    cursor: "pointer",
-  },
-}));
 
 export default Header;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { InputBase } from "@material-ui/core";
 
 const handleWidth = wide => {
     switch (wide) {
@@ -13,7 +12,7 @@ const handleWidth = wide => {
 
 
 export const ButtonRed = styled.button`
-background-color: ${(props)=> props.color === "gray" ? "lightgray": "red"};
+background-color: ${(props)=> props.color === "gray" ? "lightgray": "#FFA600"};
 z-index: 15;
 color: #fff;
 border-radius: ${(props)=> props.radius ? "5px" : null};
@@ -27,7 +26,7 @@ width:${({wide})=> handleWidth(wide)} ;
 
 `
 
-export const Input = styled(InputBase)`
+export const Input = styled.input`
 z-index: 30;
 background-color: #fff;
 padding: 25.5px;

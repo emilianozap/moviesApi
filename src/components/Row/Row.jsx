@@ -1,6 +1,7 @@
-import { Typography, makeStyles } from '@material-ui/core';
+import {  makeStyles } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Poster, Posters, RowRoot } from './RowStyled';
 
 const Row = ({title, fetchUrl, isLargeRow }) => {
     const classes = useStyles();
@@ -22,15 +23,15 @@ const Row = ({title, fetchUrl, isLargeRow }) => {
 
 
   return (
-    <div className={classes.root}>
+    <RowRoot>
       
-      <Typography variant='h4'>{title}</Typography>
-      <div className={classes.posters}>
+      <h2>{title}</h2>
+      <Posters>
         {
           movies.map((movie)=>
           ((isLargeRow && movie.posters_path) ||
           (!isLargeRow && movie.backdrop_path)) && (
-            <img
+            <Poster
             className={`${classes.poster} ${
               isLargeRow && classes.posterLarge
             }`}
@@ -44,9 +45,9 @@ const Row = ({title, fetchUrl, isLargeRow }) => {
         }
 
 
-      </div>
+      </Posters>
 
-      </div>
+      </RowRoot>
   )
 }
 

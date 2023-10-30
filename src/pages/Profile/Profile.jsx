@@ -1,10 +1,10 @@
-import { Typography, makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import React from "react";
-import Header from "../components/Header/Header";
-import avatar from "../assets/image/avatar.jpg";
-import Plans from "../components/Plans/Plans";
-import { ButtonRed } from "../styles/StyledComponents";
-import { auth } from "../firebase";
+import Header from "../../components/Header/Header";
+import avatar from "../../assets/image/avatar.jpg";
+import Plans from "../../components/Plans/Plans";
+import { ButtonRed } from "../../styles/Ui/StyledComponents";
+import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
@@ -19,15 +19,15 @@ const Profile = () => {
   return (
     <div className={classes.root}>
       <Header></Header>
-      <Typography variant="h3">Edit Profile</Typography>
+      <h2>Edit Profile</h2>
         <div className={classes.info}>
           <img className={classes.avatar} src={avatar} alt="avatar" />
           <div className={classes.details}>
             <div className={classes.plans}>
-              <Typography variant="h6">email usuario</Typography>
-              <Typography className={classes.text} variant="h5" gutterBottom>
+              <h6>email usuario</h6>
+              <h5>
                 Plants
-              </Typography>
+              </h5>
               <Plans cost={7.99}>Netflix Standard</Plans>
               <Plans cost={11.99}>Netflix Basic</Plans>
               <Plans wide= "medium" color="gray" cost={15.99}>Netflix Premium</Plans>

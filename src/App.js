@@ -1,18 +1,17 @@
-import { makeStyles } from "@material-ui/core";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import Paypal from "./pages/Paypal";
-import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
+import Paypal from "./pages/Paypal/Paypal";
+import Home from "./pages/Home/Home";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectUser } from "./redux/slice/userSlice";
+import { RootStyled } from "./styles/StyledApp";
 
 function App() {
-  const user = useSelector (selectUser);
+  const user = useSelector(selectUser);
   console.log(selectUser);
-  const classes = useStyles();
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function App() {
           email: userAuth.email
         }))
 
-      }else{
+      } else {
         dispatch(logout)
       }
     });
@@ -32,30 +31,27 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className={classes.root}>
-      <Router>
-    
-          <Routes>
-          <Route path="/login" element={<Login />} />
+    <RootStyled>
+      <BrowserRouter>
+        {
+          !user ? (<Login></Login>)
+            : (<Routes>
 
 
-            <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile />} />
 
-            <Route path="/checkout " element={<Paypal />} />
+              <Route path="/checkout " element={<Paypal />} />
 
-            <Route path="/" element={<Home />} />
-          </Routes>
-        
-      </Router>
-    </div>
+              <Route path="/" element={<Home />} />
+            </Routes>)
+
+
+
+        }
+      </BrowserRouter>
+    </RootStyled>
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: "#111",
-    minHeight: "100vh",
-  },
-}));
 
 export default App;

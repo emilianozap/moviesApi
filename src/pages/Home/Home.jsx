@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react'
-import Header from '../components/Header/Header';
-import Banner from '../components/Banner/Banner';
-import Row from '../components/Row/Row';
-import requests from '../requests/requests';
+import Header from '../../components/Header/Header';
+import Banner from '../../components/Banner/Banner';
+import Row from '../../components/Row/Row';
+import requests from '../../requests/requests';
 
 const Home = () => {
   const classes = useStyles();
