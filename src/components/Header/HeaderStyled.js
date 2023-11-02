@@ -13,7 +13,7 @@ right: 0;
 display: flex;
 justify-content: space-between;
 align-items: center;
-height: 100px;
+height: 60px;
 width: 100%;
 
 `
@@ -21,10 +21,12 @@ width: 100%;
 export const Logo = styled.img`
 cursor: pointer;
 width: 100px;
+margin-top: 20px;
 `
 export const Avatar = styled.img`
 cursor: pointer;
 width: 60px;
 position: sticky;
 right: 20px;
+margin-top: 20px;
 `

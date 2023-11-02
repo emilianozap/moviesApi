@@ -11,7 +11,6 @@ import { RootStyled } from "./styles/StyledApp";
 
 function App() {
   const user = useSelector(selectUser);
-  console.log(selectUser);
   const dispatch = useDispatch()
 
   useEffect(() => {

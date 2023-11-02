@@ -6,10 +6,11 @@ import { ButtonRed } from "../../styles/Ui/StyledComponents";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { Avatar, InfoProfile, ProfileRoot, Details } from "./ProfileStyled";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
   const navigate = useNavigate()
-
+  const user = useSelector((state) => state.user.user);
 
   const singOut = () =>{
     auth.signOut()
@@ -23,13 +24,13 @@ const Profile = () => {
           <Avatar src={avatar} alt="avatar" />
           <Details>
             <div>
-              <h6>email usuario</h6>
+              <h6>{user.email}</h6>
               <h5>
                 Plants
               </h5>
               <Plans cost={7.99}>Netflix Standard</Plans>
               <Plans cost={11.99}>Netflix Basic</Plans>
-              <Plans wide= "medium" color="gray" cost={15.99}>Netflix Premium</Plans>
+              <Plans cost={15.99}>Netflix Premium</Plans>
               <ButtonRed onClick={singOut} wide= "fullWidth">Sign Out</ButtonRed>
             </div>
           </Details>

@@ -1,14 +1,56 @@
 import  styled  from "styled-components";
-import banner from "../../assets/image/banner.jpg";
+import banner from "../../assets/image/unnamed.png";
+
+
+
 
 export const RootBanner = styled.div`
-    background-image: url(${banner});
+    ${({bg}) => bg ? `background-image: url(${bg});` : `background-image: url(${banner});`}
     position: relative;
-    height: 440px;
-    object-fit: contain;
+    height: 640px;
     background-size: cover;
     background-position: center;
     color: #fff;
+    width: 100%;
+    object-fit:cover;
+   
+  
+    
+`;
+
+export const RootBanner1 = styled(RootBanner)`
+    background-image: url(${banner});
+    margin-top: 20px;
+
+    
+`;
+
+export const InfoContainer = styled.div`
+    background-color: transparent;
+    width: 30%;
+    position: relative;
+   
+    top: 80px;
+    left: 30px;
+    z-index: 100;
+    & h2{
+        font-size: 60px;
+        margin: 20px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+    & h6{
+        font-size: 25px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    
+`;
+
+export const ButtonContainer = styled.div`
+    position: absolute;
+    top: 240px;
+
+    
 `;
 
 export const Button = styled.button`
@@ -16,10 +58,12 @@ export const Button = styled.button`
  color: #fff;
  font-weight: 700;
  border-radius: 5px;
- padding: 1px 4px 1px 4px;
+ padding: 10px 50px 10px 40px;
+ border-style: none;
  margin-right: 1rem;
- background-color: rgba(51,51,51,0.5);
- :hover{
+ background-color: red;
+ margin: 20px;
+ &:hover{
     color: #000;
     background-color: #e6e6e6;
  }

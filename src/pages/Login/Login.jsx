@@ -14,9 +14,9 @@ const Login = () => {
         <ButtonRed>iniciar sesión</ButtonRed>
         
       </HeaderLogin>
+      <SingUp />
       <Info>
-      
-          <SingUp />
+     
        
           <div>
             <h4>Películas y series ilimitadas y mucho más</h4>
@@ -25,11 +25,6 @@ const Login = () => {
               ¿Quieres ver Netflix ya? Ingresa tu email para crear una cuenta o
               reiniciar tu membresía de Netflix.
             </h6>
-
-            <div>
-              <Input placeholder="Email"></Input>
-              <ButtonRed>Comenzar </ButtonRed>
-            </div>
           </div>
       
       </Info>
