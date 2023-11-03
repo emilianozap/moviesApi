@@ -11,9 +11,15 @@ export const Posters = styled.div  `
 display: flex;
 margin-top: 10px;
 overflow-y: hidden;
-overflow-x: scroll;
-::-webkit-scrollbar{
-    display: none;
+
+&::-webkit-scrollbar{
+    background-color: transparent;
+    height: 6px;
+}
+
+&::-webkit-scrollbar-thumb{
+    background-color: #FFBB02;
+    border-radius: 20px;
 }
 
 
