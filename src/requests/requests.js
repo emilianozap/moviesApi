@@ -13,7 +13,6 @@ const requests ={
     fetchComedyMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=35`,
     fetchHorrorMovies: `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=27`,
 }
-console.log(requests);
 
 
 export default requests

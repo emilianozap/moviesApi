@@ -4,6 +4,7 @@ export const PlantsRoot = styled.div`
 margin-top: 3px;
 margin-bottom: 3px;
 display: flex;
+
 justify-content: space-between;
 align-items: center;
 button{

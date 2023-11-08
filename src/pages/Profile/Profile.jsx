@@ -28,9 +28,9 @@ const Profile = () => {
               <h5>
                 Plants
               </h5>
-              <Plans cost={7.99}>Netflix Standard</Plans>
-              <Plans cost={11.99}>Netflix Basic</Plans>
-              <Plans cost={15.99}>Netflix Premium</Plans>
+              <Plans description= {"Movie Hd Standard"} price={7.99}>Netflix Standard</Plans>
+              <Plans description="Movie Hd Basic" price={11.99}>Netflix Basic</Plans>
+              <Plans description="Movie Hd Premium" price={15.99}>Netflix Premium</Plans>
               <ButtonRed onClick={singOut} wide= "fullWidth">Sign Out</ButtonRed>
             </div>
           </Details>

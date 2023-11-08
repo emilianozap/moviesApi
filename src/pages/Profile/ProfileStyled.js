@@ -37,15 +37,29 @@ border-radius: 3px;
 export const Details = styled.div`
 width: 100%;
 margin-left: 3px;
-h6{
+& h6{
     background-color: #aaa;
     padding: 15px;
     margin-bottom: 1px;
     font-size: 18px;
     color: #111111;
 }
-div{
+& div{
     width: 100%;
 }
+
+`
+
+export const PlantsStyled = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+& div{
+  display: flex;
+  margin: 20px;
+  width: 99%;
+  margin-left: 1px;
+}
+
 
 `
