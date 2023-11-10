@@ -5,7 +5,7 @@ import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setPrice } from "../../redux/slice/priceSlice";
-import { URL_MP } from "../../Utils/constants";
+import { KEY_MP, URL_MP } from "../../Utils/constants";
 
 
   //mercado pago
@@ -13,7 +13,7 @@ import { URL_MP } from "../../Utils/constants";
     const user = useSelector((state) => state.user.user);
    const dispatch = useDispatch()
     const [preferenceId, setPreferenceId] = useState(null);
-    initMercadoPago("TEST-8e61ddb7-984f-4e98-9d70-2880f14e8394");
+    initMercadoPago(KEY_MP);
 
 
     const handleBuy = async () => {
