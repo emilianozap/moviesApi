@@ -5,6 +5,7 @@ import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setPrice } from "../../redux/slice/priceSlice";
+import { URL_MP } from "../../Utils/constants";
 
 
   //mercado pago
@@ -32,7 +33,7 @@ import { setPrice } from "../../redux/slice/priceSlice";
     const createPreference = async ( ) => {
       try {
         const response = await axios.post(
-          "http://localhost:8080/create_preference",
+          `${URL_MP}/create_preference`,
           {
             description: description,
             price: price,
