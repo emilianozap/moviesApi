@@ -13,6 +13,10 @@ export const RootBanner = styled.div`
     color: #fff;
     width: 100%;
     object-fit:cover;
+    @media (max-width: 400px) {
+       margin-top:20px;
+
+    }
 
   
     
