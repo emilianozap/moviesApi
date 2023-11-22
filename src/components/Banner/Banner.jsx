@@ -1,5 +1,12 @@
 import React from "react";
-import { RootBanner, Button, FadeBottom, RootBanner1, InfoContainer, ButtonContainer } from "./BannerStyled";
+import {
+  RootBanner,
+  Button,
+  FadeBottom,
+  RootBanner1,
+  InfoContainer,
+  ButtonContainer,
+} from "./BannerStyled";
 import { useSelector } from "react-redux";
 
 const Banner = () => {
@@ -16,14 +23,14 @@ const Banner = () => {
       ) : (
         <RootBanner bg={base_url + hero?.backdrop_path}>
           <InfoContainer>
-            <h2>{truncate(`${hero?.title || hero.name}`,30)}</h2>
+            <h2>{truncate(`${hero?.title || hero.name}`, 30)}</h2>
             <ButtonContainer>
-            <h6>{truncate(`${hero?.overview}`, 150)}</h6>
-              <Button>play</Button>
-              <Button>my list</Button>
+              <div>
+                <Button>play</Button>
+                <Button>my list</Button>
+              </div>
+              <h6>{truncate(`${hero?.overview}`, 150)}</h6>
             </ButtonContainer>
-            
-            
           </InfoContainer>
           <FadeBottom></FadeBottom>
         </RootBanner>

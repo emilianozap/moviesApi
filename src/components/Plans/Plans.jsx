@@ -10,7 +10,7 @@ import { KEY_MP, URL_MP } from "../../Utils/constants";
 
   //mercado pago
   const Plans = ({ price, description, children, color = "red", wide }) => {
-    const user = useSelector((state) => state.user.user);
+    useSelector((state) => state.user.user);
    const dispatch = useDispatch()
     const [preferenceId, setPreferenceId] = useState(null);
     initMercadoPago(KEY_MP);

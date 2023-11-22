@@ -15,13 +15,15 @@ justify-content: space-between;
 align-items: center;
 height: 60px;
 width: 100%;
-
 `
 
 export const Logo = styled.img`
 cursor: pointer;
 width: 100px;
+position: sticky;
+left: 20px;
 margin-top: 20px;
+
 `
 export const Avatar = styled.img`
 cursor: pointer;

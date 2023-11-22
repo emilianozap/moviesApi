@@ -4,7 +4,10 @@ import hero from "../../assets/image/login.jpg";
 
 
 export const LoginRoot = styled.div`
-height: 100vh;
+height: auto;
+@media (max-width: 1330) {
+
+}
 background-image: url(${hero});
 background-repeat: no-repeat;
 background-position: center;
@@ -39,14 +42,26 @@ cursor: pointer;
 
 export const Info = styled.div`
 color: #fff;
-margin-top: 80px;
+margin-top: 40px;
+padding: 10px;
 
 text-align: center;
 h4{
-    font-weight: 800;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 8px;
+    font-size: large;
+
 }
 h5{
-    font-weight: 400;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 8px;
+    font-size: medium;
+
+}
+h6{
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding: 8px;
+font-size: medium;
 }
 
 `

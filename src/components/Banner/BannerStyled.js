@@ -13,42 +13,60 @@ export const RootBanner = styled.div`
     color: #fff;
     width: 100%;
     object-fit:cover;
-   
+
   
     
 `;
 
 export const RootBanner1 = styled(RootBanner)`
     background-image: url(${banner});
-    margin-top: 20px;
 
     
 `;
 
 export const InfoContainer = styled.div`
     background-color: transparent;
-    width: 30%;
+    width: 350px;
     position: relative;
-   
     top: 80px;
     left: 30px;
     z-index: 100;
+    @media (max-width: 400px) {
+        width: 98%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        text-align: center;
+        margin: 5px;
+
+
+    }
     & h2{
         font-size: 60px;
         margin: 20px;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        @media (max-width: 400px) {
+        text-align: center;
+        font-size: 50px;
+
+    }
     }
     & h6{
         font-size: 25px;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        @media (max-width: 400px) {
+        text-align: center;
+        font-size: 22px;
     }
 
-    
+}
 `;
 
 export const ButtonContainer = styled.div`
     position: absolute;
     top: 240px;
+  
 
     
 `;
@@ -56,12 +74,15 @@ export const ButtonContainer = styled.div`
 export const Button = styled.button`
  cursor: pointer;
  color: #fff;
- font-weight: 700;
+ text-align: center;
  border-radius: 5px;
- padding: 10px 50px 10px 40px;
+ padding: 10px 25px 10px 25px;
  border-style: none;
  margin-right: 1rem;
  background-color: red;
+ text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+ width: 95px;
  margin: 20px;
  &:hover{
     color: #000;

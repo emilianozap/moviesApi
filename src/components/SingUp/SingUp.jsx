@@ -7,29 +7,27 @@ import { Form, SingUpLink, SingUpRoot } from "./SingUpStyled";
 const SingUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   const signIn = (e) => {
     e.preventDefault();
-    auth.signInWithEmailAndPassword(email,password)
-    .then((authUser)=> navigate("/"))
-    .catch((err)=>alert(err.message))
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((authUser) => navigate("/"))
+      .catch((err) => alert(err.message));
   };
 
   const register = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password)
-    .then((authUser)=> navigate("/"))
-    .catch((err)=>alert(err.message))
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => navigate("/"))
+      .catch((err) => alert(err.message));
   };
-
 
   return (
     <SingUpRoot>
-      <h5>
-        Sign In
-      </h5>
+      <h5>Sign In</h5>
       <Form>
         <Input
           onChange={(e) => setEmail(e.target.value)}
@@ -45,19 +43,17 @@ const SingUp = () => {
           type="password"
         />
         <ButtonRed onClick={signIn} type="submit" wide="medium" radius>
-          Sing In
+          iniciar sesión
         </ButtonRed>
         <p>
-          New to Netflix?{"  "}
+          Nuevo en Movies Hd? ingresa tus datos y has{"  "}
           <SingUpLink onClick={register}>
-            Sign Up now. {"  "}
+            click aca para registrarte. {"  "}
           </SingUpLink>
         </p>
       </Form>
     </SingUpRoot>
   );
 };
-
-
 
 export default SingUp;

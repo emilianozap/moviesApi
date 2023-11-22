@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
-import Paypal from "./pages/Paypal/Paypal";
 import Home from "./pages/Home/Home";
 import { useEffect } from "react";
 import { auth } from "./firebase";
@@ -39,7 +38,6 @@ function App() {
 
               <Route path="/profile" element={<Profile />} />
 
-              <Route path="/checkout " element={<Paypal />} />
 
               <Route path="/" element={<Home />} />
             </Routes>)

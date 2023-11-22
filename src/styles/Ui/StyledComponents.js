@@ -3,7 +3,7 @@ import styled from "styled-components";
 const handleWidth = wide => {
     switch (wide) {
         case "fullWidth": return "100%"
-        case "medium": return "260px"
+        case "medium": return "240px"
     
         default: return "160px"
     }
@@ -23,14 +23,20 @@ border: none;
 outline: none;
 cursor: pointer;
 width:${({wide})=> handleWidth(wide)} ;
+@media (max-width: 350px) {
+max-width: 240px;
+
+}
 
 `
 
 export const Input = styled.input`
-z-index: 30;
+display: flex;
+justify-content: center;
+align-items: center;
 background-color: #fff;
 padding: 25.5px;
-height: 30px;
+height: 10px;
 border-radius: 5px 0px 0px 5px;
 border: none;
 
